@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        ul li{
+            list-style: none;
+        }
+    </style> -->
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <h2>
+            {{school.name}} 
+            <hr>
+            {{school.mobile}}
+        </h2>
+        <ul>
+            <li>
+                {{campus[0]}}
+            </li>
+            <li>
+                {{campus[2]}}
+            </li>
+        </ul>
+    </div>
+
+     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+     <script>
+         var app = new Vue({
+             el: "#app",
+             data: {
+                 message: "你好",
+                 school: {
+                     name: "w3c",
+                     mobile: "123456789"
+                 },
+                 campus: ["北京", "上海", "广州", "深圳"]
+             }
+         })
+     </script>
+</body>
+</html>

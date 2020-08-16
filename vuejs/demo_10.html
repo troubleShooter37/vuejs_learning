@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+</head>
+<body>
+    <div id="mask">
+        <div class="center">
+            <h2 class="title">
+                <img width="100px" height="100px" src="./img/002.jpg" alt="">
+            </h2>
+            <img :src="imgArr[index]" alt="" width="100px" height="100px">
+            <!-- <img :src="./img/002.jpg" alt="" > -->
+            <a href="" @click="prev" class="left">
+                <img width="100px" height="100px" src="./img/003.jpg" alt="">
+            </a>
+            <a href="" @click="next" class="right">
+                <img width="100px" height="100px" src="./img/004.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var mask = new Vue({
+            el: "#mask",
+            data: {
+                imgArr: [
+                    "./img/001.jpg",
+                    "./img/002.jpg",
+                    "./img/003.jpg",
+                    "./img/004.jpg"
+                ],
+                index: 0
+            },
+            methods:{
+                prev:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
